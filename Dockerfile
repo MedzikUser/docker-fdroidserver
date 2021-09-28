@@ -3,4 +3,4 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends ssh && \
     rm -rf /var/lib/apt/lists/*
 RUN pip3 install fdroidserver
-Run mkdir -p /usr/local/share/doc && ln -s /usr/share/doc/fdroidserver /usr/local/share/doc/fdroidserver
+RUN mkdir -p /usr/local/share/doc && ln -s /usr/share/doc/fdroidserver /usr/local/share/doc/fdroidserver
