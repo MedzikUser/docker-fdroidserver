@@ -4,3 +4,5 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 RUN pip3 install fdroidserver
 RUN mkdir -p /usr/local/share/doc && ln -s /usr/share/doc/fdroidserver /usr/local/share/doc/fdroidserver
+
+ENTRYPOINT ["/usr/bin/bash"]
