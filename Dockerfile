@@ -1,9 +1,7 @@
-FROM registry.gitlab.com/fdroid/docker-executable-fdroidserver:latest 
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends ssh && \
-    rm -rf /var/lib/apt/lists/*
-RUN pip3 install fdroidserver
-RUN mkdir -p /usr/local/share/doc && ln -s /usr/share/doc/fdroidserver /usr/local/share/doc/fdroidserver
+FROM wonko21/fdroidserver:latest
 
-ENTRYPOINT ["bash"]
-CMD [""]
+RUN apt-get update && \
+    apt-get upgrade -y
+
+RUN curl -fsSL https://deb.nodesource.com/setup_lts.x | bash && \
+    apt-get install -y nodejs
