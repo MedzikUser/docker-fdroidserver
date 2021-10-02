@@ -1,7 +1,7 @@
 FROM registry.gitlab.com/fdroid/docker-executable-fdroidserver:latest
 
-RUN apt-get update
-    && apt-get upgrade -y
+RUN apt-get update \
+    && apt-get upgrade -y \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
